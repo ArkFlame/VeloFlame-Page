@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>VeloFlame - Secure Minecraft Proxy</title>
+    <meta name="description" content="VeloFlame is the most secure Velocity fork for Minecraft servers, offering unparalleled performance and protection against bot attacks by integrating FlameCord's legendary security.">
+    <meta name="keywords" content="Minecraft, proxy, Velocity, Velocity fork, BungeeCord, FlameCord, Minecraft server, server security, bot protection, anti-bot, Minecraft hosting, Spigot, PaperMC">
+    <link rel="canonical" href="https://veloflame.com/"> <!-- Replace with your actual domain -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://veloflame.com/"> <!-- Replace with your actual domain -->
+    <meta property="og:title" content="VeloFlame - Secure Minecraft Proxy Fork of Velocity">
+    <meta property="og:description" content="The most secure Velocity fork for Minecraft, offering high performance and protection against all bot attacks.">
+    <meta property="og:image" content="logo.png"> <!-- For best results, use a 1200x630px image -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://veloflame.com/"> <!-- Replace with your actual domain -->
+    <meta property="twitter:title" content="VeloFlame - Secure Minecraft Proxy Fork of Velocity">
+    <meta property="twitter:description" content="The most secure Velocity fork for Minecraft, offering high performance and protection against all bot attacks.">
+    <meta property="twitter:image" content="logo.png"> <!-- For best results, use a 1200x630px image -->
+
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-color: #0A0A0A;
+            --card-background: #141414;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-color: #E0E0E0;
+            --text-color-muted: #888888;
+            --primary-gradient: linear-gradient(90deg, #FF416C, #FF4B2B);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 15% 15%, rgba(255, 65, 108, 0.1) 0%, transparent 30%),
+                              radial-gradient(circle at 85% 80%, rgba(255, 75, 43, 0.1) 0%, transparent 30%);
+        }
+
+        .container { max-width: 1200px; margin: auto; margin-bottom: 20px; padding: 0 2rem; }
+
+        header {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; }
+        .logo img { height: 40px; }
+        .logo-text { font-weight: bold; font-size: 1.25rem; color: var(--text-color); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text-color); text-decoration: none; transition: color 0.3s; font-weight: 500; }
+        .nav-links a:hover { color: white; }
+        .social-icons { display: flex; align-items: center; gap: 1rem; }
+        .social-icons a svg { width: 24px; height: 24px; fill: var(--text-color-muted); transition: fill 0.3s; }
+        .social-icons a:hover svg { fill: white; }
+
+        #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 8rem; }
+        .hero-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
+        .hero-content h1 { font-size: 4.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 1.1rem; color: var(--text-color-muted); margin-bottom: 2rem; max-width: 500px; }
+        .cta-button { display: inline-block; background: var(--primary-gradient); color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: transform 0.3s ease; }
+        .cta-button:hover { transform: scale(1.05); }
+
+        .terminal { background: #111; border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .terminal-header { display: flex; gap: 0.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem; }
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; } .dot-yellow { background: #ffbd2e; } .dot-green { background: #27c93f; }
+        .terminal-body { font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; height: 300px; overflow: hidden; }
+        .terminal-body p { margin-bottom: 0.5rem; }
+        .terminal-body .blocked { color: #ff5f56; } .terminal-body .info { color: #27c93f; }
+
+        section { padding: 6rem 0; }
+        .section-title { text-align: center; font-size: 3rem; font-weight: 900; margin-bottom: 4rem; }
+        #features { padding-bottom: 8rem; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature-card { background: var(--card-background); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border-color); transition: transform 0.3s, box-shadow 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .feature-card .icon { margin-bottom: 1.5rem; background: var(--primary-gradient); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .feature-card .icon svg { width: 28px; height: 28px; fill: white; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: white; }
+        .feature-card p { color: var(--text-color-muted); }
+
+        /* --- How It Works Diagram --- */
+        #how-it-works .diagram-container {
+            display: grid;
+            grid-template-columns: 220px 1fr 220px 1fr 220px;
+            align-items: center;
+            gap: 1rem;
+        }
+        .diagram-sources { display: flex; flex-direction: column; gap: 8rem; width: 100%; }
+        .diagram-box { background: var(--card-background); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; text-align: center; width: 100%; }
+        .diagram-box h4 { font-size: 1.2rem; color: white; margin-bottom: 0.5rem; }
+        .diagram-box p { color: var(--text-color-muted); font-size: 0.9rem; }
+        .diagram-flow { position: relative; width: 100%; height: 100%; }
+        .diagram-flow svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; }
+
+        .path-track { stroke: #333; }
+        .flow-packet { stroke-dasharray: 20 200; stroke-linecap: round; }
+        .packet-red { stroke: url(#red-gradient); }
+        .packet-green { stroke: url(#green-gradient); }
+
+        .animate-fast { animation: flow-fast 0.75s linear infinite; } /* Speed Increased */
+        .animate-slow { animation: flow-slow 3s linear infinite; }
+
+        @keyframes flow-fast { from { stroke-dashoffset: 220; } to { stroke-dashoffset: 0; } }
+        @keyframes flow-slow { from { stroke-dashoffset: 220; } to { stroke-dashoffset: 0; } }
+        /* --- End Diagram --- */
+
+        #about { background: var(--card-background); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .about-content { max-width: 800px; margin: auto; text-align: center; }
+        .about-content p { font-size: 1.1rem; color: var(--text-color-muted); }
+        .about-content a { color: #FF4B2B; text-decoration: none; font-weight: bold; }
+
+        footer { text-align: center; padding: 3rem 0; color: var(--text-color-muted); }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="logo.png" alt="VeloFlame Logo">
+                <span class="logo-text">VeloFlame</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="social-icons">
+                 <a href="https://discord.com/invite/gF36AT3" target="_blank" title="Discord"><svg viewBox="0 0 256 199" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+    <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" />
+</svg></a>
+                <a href="#" target="_blank" title="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.54-.18-6.68-1.88-8.79-4.46-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.58-.7-.02-1.37-.21-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21c7.34 0 11.35-6.08 11.35-11.35 0-.17 0-.34-.01-.51.78-.57 1.45-1.28 1.98-2.08z"></path></svg></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>The Most <span class="gradient-text">Secure</span> Proxy for Minecraft.</h1>
+                    <p>VeloFlame integrates FlameCord's legendary security into a modern Velocity fork, delivering the highest performance and protection against all bot attacks.</p>
+                    <a href="https://discord.com/invite/gF36AT3" target="_blank" class="cta-button">Join Discord</a>
+                </div>
+                <div class="terminal">
+                    <div class="terminal-header"><div class="terminal-dot dot-red"></div><div class="terminal-dot dot-yellow"></div><div class="terminal-dot dot-green"></div></div>
+                    <div class="terminal-body">
+                        <p><span class="info">[VeloFlame]</span> Initializing firewall...</p><p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 103.5.7.2 (RateLimit)</p><p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 45.12.3.5 (VPN Detected)</p><p><span class="info">[VeloFlame]</span> Connection from LinsaFTW allowed.</p><p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 192.168.1.10 (Invalid Account)</p><p><span class="info">[VeloFlame]</span> System stable. 3 attacks blocked.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="container">
+            <h2 class="section-title">The Ultimate Protection</h2>
+            <div class="features-grid">
+                <div class="feature-card"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z"></path></svg></div><h3>Advanced Firewall</h3><p>Our integrated firewall blocks malicious connections and common bot attacks before they reach your server.</p></div>
+                <div class="feature-card"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"></path></svg></div><h3>Connection Checks</h3><p>Verify every connection with VPN, Account, and Rate-Limiting checks to filter out illegitimate traffic.</p></div>
+                <div class="feature-card"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"></path></svg></div><h3>Native Performance</h3><p>By integrating security directly into the proxy, VeloFlame offers extreme performance compared to plugin-based solutions.</p></div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="container">
+            <h2 class="section-title">Visualizing The Filter</h2>
+            <div class="diagram-container">
+                <div class="diagram-sources">
+                    <div class="diagram-box"><h4>Malicious Bots</h4><p>High-volume packets</p></div>
+                    <div class="diagram-box"><h4>Legitimate Players</h4><p>Normal packets</p></div>
+                </div>
+
+                <div class="diagram-flow">
+                    <svg preserveAspectRatio="none" viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="red-gradient"><stop offset="0%" stop-color="#FF416C"/><stop offset="100%" stop-color="#FF4B2B"/></linearGradient>
+                            <linearGradient id="green-gradient"><stop offset="0%" stop-color="#27c93f"/><stop offset="100%" stop-color="#1db954"/></linearGradient>
+                        </defs>
+                        <!-- Bot to VeloFlame -->
+                        <path d="M0 25 L100 50" class="path-track" stroke-width="0.5"/>
+                        <path d="M0 25 L100 50" stroke-width="1.5" fill="none" class="flow-packet packet-red animate-fast"/>
+                        <!-- Player to VeloFlame -->
+                        <path d="M0 75 L100 50" class="path-track" stroke-width="0.5"/>
+                        <path d="M0 75 L100 50" stroke-width="1.5" fill="none" class="flow-packet packet-green animate-slow"/>
+                    </svg>
+                </div>
+
+                <div class="diagram-box"><h4>VeloFlame Proxy</h4><p>Filters all connections</p></div>
+
+                <div class="diagram-flow">
+                     <svg preserveAspectRatio="none" viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="red-gradient"><stop offset="0%" stop-color="#FF416C"/><stop offset="100%" stop-color="#FF4B2B"/></linearGradient>
+                            <linearGradient id="green-gradient"><stop offset="0%" stop-color="#27c93f"/><stop offset="100%" stop-color="#1db954"/></linearGradient>
+                        </defs>
+                         <!-- VeloFlame to Spigot -->
+                        <path d="M0 50 L100 50" class="path-track" stroke-width="0.5"/>
+                        <path d="M0 50 L100 50" stroke-width="1.5" fill="none" class="flow-packet packet-green animate-slow"/>
+                    </svg>
+                </div>
+
+                <div class="diagram-box"><h4>Spigot Server</h4><p>Receives clean traffic</p></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container about-content">
+                <h2 class="section-title">Built for Performance & Security</h2>
+                <p>VeloFlame is a project by LinsaFTW, CEO of Arkflame Development. As a fork of the Velocity-CTD project, it brings the powerful security features of <a href="https://flamecord.com" target="_blank">FlameCord</a> to the modern Velocity proxy. For complete protection, pair VeloFlame with <a href="https://exploitfixer.org" target="_blank">ExploitFixer</a> to secure your Spigot servers from game-breaking exploits.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VeloFlame. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
