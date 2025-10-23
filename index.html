@@ -34,13 +34,26 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Hidden SVG block for the line gradients -->
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <linearGradient id="red-gradient">
+            <stop offset="0%" stop-color="#FF416C"/>
+            <stop offset="100%" stop-color="#FF4B2B"/>
+        </linearGradient>
+        <linearGradient id="green-gradient">
+            <stop offset="0%" stop-color="#27c93f"/>
+            <stop offset="100%" stop-color="#1db954"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
     <header>
         <nav class="container">
             <div class="logo">
                 <img src="logo.png" alt="VeloFlame Logo">
                 <span class="logo-text">VeloFlame</span>
             </div>
-            <!-- MODIFIED: Nav menu is now a separate container -->
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
@@ -49,15 +62,14 @@
                     <li><a href="#about">About</a></li>
                 </ul>
                 <div class="social-icons">
-                     <a href="https://discord.com/invite/gF36AT3" target="_blank" title="Discord">
-                         <img src="discord.svg" alt="Discord Icon" style="--icon-url: url('discord.svg');">
-                     </a>
+                    <a href="https://discord.com/invite/gF36AT3" target="_blank" title="Discord">
+                        <img src="discord.svg" alt="Discord Icon" style="filter: invert(1);">
+                    </a>
                     <a href="https://x.com/VeloFlameMC" target="_blank" title="Twitter">
-                        <img src="twitter.svg" alt="Twitter Icon" style="--icon-url: url('twitter.svg');">
+                        <img src="twitter.svg" alt="Twitter Icon" style="filter: invert(1);">
                     </a>
                 </div>
             </div>
-            <!-- NEW: Hamburger button for mobile -->
             <button class="hamburger" id="hamburger-button" aria-label="Open Menu">
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
@@ -113,6 +125,41 @@
             </div>
         </section>
 
+        <!-- CPU EFFICIENCY GRAPH SECTION -->
+        <section id="cpu-efficiency" class="container">
+            <h2 class="section-title">CPU EFFICIENCY</h2>
+            <div class="graph-container">
+                <div class="graph-legend">
+                    <div class="legend-item velocity-ctd">
+                        <span>Velocity-CTD</span>
+                        <p>3.71%</p>
+                    </div>
+                    <div class="legend-item veloflame">
+                        <span>VeloFlame</span>
+                        <p>2.14%</p>
+                    </div>
+                </div>
+                <div class="graph-visual">
+                    <div class="y-axis">
+                        <span>5.0%</span>
+                        <span>4.0%</span>
+                    </div>
+                    <div class="plot-area">
+                        <div class="plot-line velocity-ctd-line">
+                            <svg preserveAspectRatio="none" viewBox="0 0 100 25">
+                                <path d="M 0 15 C 5 5, 10 20, 15 10 S 25 0, 30 5 s 10 12, 15 5 s 10 -8, 15 -3 s 10 15, 15 15 s 10 -2, 15 -5 s 10 5, 10 8" fill="none" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="plot-line veloflame-line">
+                            <svg preserveAspectRatio="none" viewBox="0 0 100 25">
+                                <path d="M 0 20 C 10 20, 15 12, 25 15 S 45 22, 55 18 S 70 12, 80 15 s 15 2, 20 2" fill="none" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="how-it-works" class="container">
             <h2 class="section-title">Visualizing The Filter</h2>
             <div class="diagram-container">
@@ -120,46 +167,30 @@
                     <div class="diagram-box"><h4>Malicious Bots</h4><p>High-volume packets</p></div>
                     <div class="diagram-box"><h4>Legitimate Players</h4><p>Normal packets</p></div>
                 </div>
-
                 <div class="diagram-flow">
                     <svg preserveAspectRatio="none" viewBox="0 0 100 100">
-                        <defs>
-                            <linearGradient id="red-gradient"><stop offset="0%" stop-color="#FF416C"/><stop offset="100%" stop-color="#FF4B2B"/></linearGradient>
-                            <linearGradient id="green-gradient"><stop offset="0%" stop-color="#27c93f"/><stop offset="100%" stop-color="#1db954"/></linearGradient>
-                        </defs>
                         <path d="M0 25 L100 50" class="path-track" stroke-width="0.5"/>
                         <path d="M0 25 L100 50" stroke-width="1.5" fill="none" class="flow-packet packet-red animate-fast"/>
                         <path d="M0 75 L100 50" class="path-track" stroke-width="0.5"/>
                         <path d="M0 75 L100 50" stroke-width="1.5" fill="none" class="flow-packet packet-green animate-slow"/>
                     </svg>
                 </div>
-                
                 <div class="arrow-down"></div>
-
                 <div class="diagram-box"><h4>VeloFlame Proxy</h4><p>Filters all connections</p></div>
-
                 <div class="diagram-flow">
                      <svg preserveAspectRatio="none" viewBox="0 0 100 100">
-                        <defs>
-                            <linearGradient id="red-gradient-2"><stop offset="0%" stop-color="#FF416C"/><stop offset="100%" stop-color="#FF4B2B"/></linearGradient>
-                            <linearGradient id="green-gradient-2"><stop offset="0%" stop-color="#27c93f"/><stop offset="100%" stop-color="#1db954"/></linearGradient>
-                        </defs>
                         <path d="M0 50 L100 50" class="path-track" stroke-width="0.5"/>
                         <path d="M0 50 L100 50" stroke-width="1.5" fill="none" class="flow-packet packet-green animate-slow"/>
                     </svg>
                 </div>
-                
                 <div class="arrow-down"></div>
-
                 <div class="diagram-box"><h4>Spigot Server</h4><p>Receives clean traffic</p></div>
             </div>
         </section>
 
-        <!-- NEW PRICING SECTION -->
         <section id="pricing" class="container">
             <h2 class="section-title">Choose Your Plan</h2>
             <div class="pricing-grid">
-                <!-- Free Plan -->
                 <div class="pricing-card">
                     <h3>VeloFlame</h3>
                     <div class="price">FREE</div>
@@ -177,7 +208,6 @@
                     <a href="https://builtbybit.com/veloflame" target="_blank" class="pricing-button">Get Started</a>
                 </div>
 
-                <!-- Pro Plan -->
                 <div class="pricing-card featured">
                     <h3>VeloFlame PRO</h3>
                     <div class="price">$13.99</div>
