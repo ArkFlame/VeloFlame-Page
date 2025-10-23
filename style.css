@@ -102,7 +102,7 @@ nav {
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    background-color: var(--text-color); /* FIXED: Was --text-color-muted */
+    background-color: white; /* This will make the icons white */
     transition: background-color 0.3s;
 }
 
