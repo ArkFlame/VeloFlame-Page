@@ -1,0 +1,121 @@
+# --------------------------------------------------- #
+# VeloFlame Proxy Configuration                       #
+# Download PRO at https://veloflame.com/              #
+# --------------------------------------------------- #
+
+# Config version. Do not change this.
+config-version = "0.0.1"
+
+# Allows checks to block connections from the server.
+# This improves performance and security during attacks.
+[firewall]
+firewall-enabled = true
+firewall-duration = 60
+firewall-ipset = true
+firewall-ipset-name = "veloflame-firewall"
+
+# Prevents connecting too fast to the server.
+[ratelimit]
+ratelimit-enabled = true
+ratelimit-firewall = true
+ratelimit-connections = 3
+ratelimit-connections-period = 10
+ratelimit-pings = 10
+ratelimit-pings-period = 10
+
+# VeloFlame PRO only (https://veloflame.com/)
+# Extremely fast check to block connections from known VPNs.
+# Use along other anti-vpn plugins.
+[vpn]
+vpn-enabled = true
+vpn-firewall = true
+vpn-lists = [
+    "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
+    "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt",
+    "https://raw.githubusercontent.com/scriptzteam/ProtonVPN-VPN-IPs/main/exit_ips.txt",
+    "https://raw.githubusercontent.com/mmpx12/proxy-list/master/ips-list.txt",
+    "https://check.torproject.org/torbulkexitlist?ip=1.1.1.1",
+    "https://cinsscore.com/list/ci-badguys.txt",
+    "https://lists.blocklist.de/lists/all.txt",
+    "https://blocklist.greensnow.co/greensnow.txt",
+    "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/stopforumspam_7d.ipset",
+    "https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies.txt",
+    "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
+    "https://raw.githubusercontent.com/X4BNet/lists_vpn/refs/heads/main/output/vpn/ipv4.txt",
+    "https://raw.githubusercontent.com/X4BNet/lists_vpn/refs/heads/main/output/datacenter/ipv4.txt",
+    "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt",
+    "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt",
+    "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt",
+    "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/proxy.txt",
+    "https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/allive.txt",
+    "https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/http_proxies.txt",
+    "https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/socks4_proxies.txt",
+    "https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/socks5_proxies.txt",
+    "https://raw.githubusercontent.com/officialputuid/KangProxy/main/http/http.txt",
+    "https://raw.githubusercontent.com/officialputuid/KangProxy/main/https/https.txt",
+    "https://raw.githubusercontent.com/officialputuid/KangProxy/main/socks4/socks4.txt",
+    "https://raw.githubusercontent.com/officialputuid/KangProxy/main/socks5/socks5.txt",
+    "https://vakhov.github.io/fresh-proxy-list/http.txt",
+    "https://vakhov.github.io/fresh-proxy-list/https.txt",
+    "https://vakhov.github.io/fresh-proxy-list/socks4.txt",
+    "https://vakhov.github.io/fresh-proxy-list/socks5.txt",
+    "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies.json",
+    "https://raw.githubusercontent.com/Coocoobau/vpn-ip-lists/main/nordvpn-ips.txt",
+    "https://raw.githubusercontent.com/Coocoobau/vpn-ip-lists/main/protonvpn-ips.txt",
+    "https://raw.githubusercontent.com/Coocoobau/vpn-ip-lists/main/windscribevpn-ips.txt",
+    "https://raw.githubusercontent.com/scriptzteam/ProtonVPN-VPN-IPs/main/entry_ips.txt",
+    "http://az0-vpnip-public.oooninja.com/ip.txt",
+    "https://tcpshield.com/blocklist.txt"
+]
+
+# VeloFlame PRO only (https://veloflame.com/)
+# Slower but more accurate VPN check using online APIs.
+[vpn-online]
+enabled = true
+firewall = true
+apis = [
+    "https://proxycheck.io/v2/{ip}?vpn=1&asn=1",
+    "https://funkemunky.cc/vpn?ip={ip}",
+    "https://api.ipapi.is/?q={ip}",
+]
+whitelist = [
+    "127.0.0.1",
+    "0:0:0:0:0:0:0:1",
+    "localhost",
+    "172.17.0.1",
+    "172.18.0.1",
+    "172.19.0.1",
+    "192.168.1.1",
+    "192.168.0.1",
+    "10.0.0.1"
+]
+thread-pool-size = 4
+check-timeout-ms = 500
+max-concurrent-checks = 200
+write-interval-minutes = 1
+
+# VeloFlame PRO only (https://veloflame.com/)
+# Prevents using many accounts inside the server.
+[account]
+account-enabled = true
+# Maximum total amount of accounts allowed per IP.
+account-limit = 5
+# Maximum online accounts allowed per IP.
+account-concurrent = 3
+account-firewall = true
+
+# VeloFlame PRO only (https://veloflame.com/)
+# Asks new players to reconnect to join.
+[reconnect]
+reconnect-enabled = true
+reconnect-firewall = true
+# Check only activates after trigger (connections) in period (seconds).
+reconnect-trigger = 3
+reconnect-period = 10
+# After this time, player has to reconnect again if failed.
+reconnect-timeout = 30
+# If you connect too fast, you will be firewalled.
+reconnect-min-time = 500
+# Number of attempts to be able to connect the server.
+reconnect-pings = 1
+reconnect-connections = 1

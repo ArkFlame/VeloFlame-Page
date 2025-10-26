@@ -1,0 +1,71 @@
+/* VeloFlame Configuration Page Styles */
+
+#config-display {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+.config-container {
+    background: #0D0D0D; /* Slightly different background for contrast */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden; /* Hide overflow before styling scrollbar */
+}
+
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Overriding Prism.js theme */
+pre[class*="language-"] {
+    background: transparent;
+    padding: 2rem;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    text-shadow: none;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: transparent;
+}
+
+/* TOML-specific colors for VeloFlame theme */
+.token.comment {
+	color: #6a737d; /* Muted gray */
+}
+
+.token.punctuation {
+	color: #888888;
+}
+
+.token.property,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #81a1c1; /* Light blue for keys */
+}
+
+.token.boolean,
+.token.number {
+	color: #b48ead; /* Purple */
+}
+
+.token.string {
+	color: #ebcb8b; /* Yellow/Gold for strings */
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: var(--primary-red); /* Use primary red for section titles like [firewall] */
+    font-weight: bold;
+}
