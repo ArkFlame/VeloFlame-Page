@@ -532,7 +532,7 @@ footer {
         text-align: center;
         gap: 3rem;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
@@ -563,7 +563,7 @@ footer {
         border-width: 0 3px 3px 0;
         transform: rotate(45deg);
     }
-    
+
     .pricing-grid {
         grid-template-columns: 1fr;
     }
@@ -756,5 +756,5 @@ footer {
 .filter-shield-icon img {
     width: 32px;
     height: 32px;
-    
+
 }

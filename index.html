@@ -8,30 +8,78 @@
     <title>VeloFlame - Secure Minecraft Proxy</title>
     <meta name="description" content="VeloFlame is the most secure Velocity fork for Minecraft servers, offering unparalleled performance and protection against bot attacks by integrating FlameCord's legendary security.">
     <meta name="keywords" content="Minecraft, proxy, Velocity, Velocity fork, BungeeCord, FlameCord, Minecraft server, server security, bot protection, anti-bot, Minecraft hosting, Spigot, PaperMC">
-    <link rel="canonical" href="https://veloflame.com/"> <!-- Replace with your actual domain -->
+    <link rel="canonical" href="https://veloflame.com/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://veloflame.com/"> <!-- Replace with your actual domain -->
+    <meta property="og:url" content="https://veloflame.com/">
     <meta property="og:title" content="VeloFlame - Secure Minecraft Proxy">
     <meta property="og:description" content="The most secure Velocity fork for Minecraft, offering high performance and protection against all bot attacks.">
-    <meta property="og:image" content="https://veloflame.com/banner.jpg"> <!-- For best results, use a 1200x630px image -->
+    <meta property="og:image" content="https://veloflame.com/banner.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://veloflame.com/"> <!-- Replace with your actual domain -->
+    <meta property="twitter:url" content="https://veloflame.com/">
     <meta property="twitter:title" content="VeloFlame - Secure Minecraft Proxy Fork of Velocity">
     <meta property="twitter:description" content="The most secure Velocity fork for Minecraft, offering high performance and protection against all bot attacks.">
-    <meta property="twitter:image" content="https://veloflame.com/banner.jpg"> <!-- For best results, use a 1200x630px image -->
+    <meta property="twitter:image" content="https://veloflame.com/banner.jpg">
 
     <!-- Fonts and Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+
+    <!-- Added Styles for Polymart Button -->
+    <style>
+        .button-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center; /* Centers in pricing cards */
+        }
+        
+        /* Align left for Hero section specifically */
+        .hero-buttons .button-group {
+            justify-content: flex-start;
+        }
+
+        .polymart-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px;
+            transition: all 0.3s ease;
+            height: 48px; /* Matches standard button height roughly */
+            width: 48px;
+        }
+
+        .polymart-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .polymart-button img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .hero-buttons .button-group {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Hidden SVG block for the line gradients -->
@@ -60,7 +108,7 @@
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="config.html">Config</a></li> <!--- === ADDED THIS LINE === --->
+                    <li><a href="config.html">Config</a></li>
                 </ul>
                 <div class="social-icons">
                     <a href="https://discord.com/invite/gF36AT3" target="_blank" title="Discord">
@@ -87,7 +135,13 @@
                     <p>VeloFlame integrates FlameCord's legendary security into a modern Velocity fork, delivering the highest performance and protection against all bot attacks.</p>
                     <div class="hero-buttons">
                         <a href="https://discord.com/invite/gF36AT3" target="_blank" class="cta-button">Join Discord</a>
-                        <a href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" class="cta-button secondary">Download Now</a>
+                        <!-- UPDATED HERO DOWNLOAD BUTTONS -->
+                        <div class="button-group">
+                            <a href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" class="cta-button secondary">Download Now</a>
+                            <a href="https://polymart.org" target="_blank" class="polymart-button" title="Download on Polymart">
+                                <img src="polymart.png" alt="Polymart">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="terminal">
@@ -163,7 +217,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="how-it-works" class="container">
             <h2 class="section-title">Visualizing The Filter</h2>
             <div class="diagram-container">
@@ -211,7 +265,13 @@
                             <span>Connection Rate Limit</span>
                         </li>
                     </ul>
-                    <a href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" class="pricing-button">Get Started</a>
+                    <!-- UPDATED PRICING FREE BUTTONS -->
+                    <div class="button-group">
+                        <a href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" class="pricing-button">Get Started</a>
+                        <a href="https://polymart.org" target="_blank" class="polymart-button" title="Get on Polymart">
+                            <img src="polymart.png" alt="Polymart">
+                        </a>
+                    </div>
                 </div>
 
                 <div class="pricing-card featured">
@@ -236,7 +296,13 @@
                             <span>Reconnect Anti-Bot Checks</span>
                         </li>
                     </ul>
-                    <a href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" class="pricing-button">Purchase PRO</a>
+                    <!-- UPDATED PRICING PRO BUTTONS -->
+                    <div class="button-group">
+                        <a href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" class="pricing-button">Purchase PRO</a>
+                        <a href="https://polymart.org" target="_blank" class="polymart-button" title="Purchase on Polymart">
+                            <img src="polymart.png" alt="Polymart">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
