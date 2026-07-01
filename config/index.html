@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VeloFlame Default Configuration</title>
-    <meta name="description" content="Read the default VeloFlame TOML configuration for firewall, rate limit, VPN, reconnect, whitelist, and logging settings.">
+    <title>VeloFlame - Default Configuration</title>
+    <meta name="description" content="Default VeloFlame TOML configuration for Minecraft Velocity proxy firewall, rate limit, VPN/proxy detection, reconnect protection, whitelist, and logging settings.">
     <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="keywords" content="VeloFlame config, veloflame.toml, Velocity proxy config, Minecraft proxy firewall, Minecraft server security configuration">
     <link rel="canonical" href="https://veloflame.com/config/">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/webp" href="/assets/img/veloflame-logo-96.webp">
@@ -14,389 +15,106 @@
     <meta name="theme-color" content="#0a0a0c">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://veloflame.com/config/">
-    <meta property="og:title" content="VeloFlame Default Configuration">
-    <meta property="og:description" content="Read the default VeloFlame TOML configuration for firewall, rate limit, VPN, reconnect, whitelist, and logging settings.">
+    <meta property="og:title" content="VeloFlame - Default Configuration">
+    <meta property="og:description" content="Default configuration for VeloFlame, the secure Velocity fork for Minecraft servers.">
     <meta property="og:image" content="https://veloflame.com/assets/img/veloflame-og.webp">
     <meta property="og:site_name" content="VeloFlame">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VeloFlame Default Configuration">
-    <meta name="twitter:description" content="Read the default VeloFlame TOML configuration for firewall, rate limit, VPN, reconnect, whitelist, and logging settings.">
+    <meta name="twitter:title" content="VeloFlame - Default Configuration">
+    <meta name="twitter:description" content="Default configuration for VeloFlame, the secure Velocity fork for Minecraft servers.">
     <meta name="twitter:image" content="https://veloflame.com/assets/img/veloflame-og.webp">
-    <link rel="stylesheet" href="/assets/css/base.css">
-    <link rel="stylesheet" href="/assets/css/config.css">
+    <link href="/style.css" rel="stylesheet">
+    <link href="/config.css" rel="stylesheet">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"VeloFlame default TOML configuration","description":"Default VeloFlame TOML configuration for Minecraft server proxy security controls.","datePublished":"2026-07-01","dateModified":"2026-07-01","author":{"@type":"Organization","name":"ArkFlame"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://veloflame.com/"},{"@type":"ListItem","position":2,"name":"Config","item":"https://veloflame.com/config/"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://veloflame.com/"},{"@type":"ListItem","position":2,"name":"Config","item":"https://veloflame.com/config/"}]}</script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-    <nav class="container nav" aria-label="Primary navigation">
-        <a class="brand" href="/" aria-label="VeloFlame home">
-            <img src="/assets/img/veloflame-logo-96.webp" width="40" height="40" alt="VeloFlame flame logo" decoding="async">
-            <span>VeloFlame</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="nav-menu" id="primary-menu">
-            <a href="/#features">Features</a>
-            <a href="/#how-it-works">How it works</a>
-            <a href="/#pricing">Pricing</a>
-            <a href="/articles/">Articles</a>
-            <a class="active" href="/config/">Config</a>
-            <a class="icon-link" href="https://discord.com/invite/gF36AT3" target="_blank" rel="noopener" aria-label="Join the VeloFlame Discord">
-                <img src="/discord.svg" width="22" height="22" alt="" decoding="async">
-            </a>
-            <a class="icon-link" href="https://x.com/VeloFlameMC" target="_blank" rel="noopener" aria-label="VeloFlame on X">
-                <img src="/twitter.svg" width="22" height="22" alt="" decoding="async">
-            </a>
-        </div>
-    </nav>
+<header>
+<nav class="container">
+<div class="logo">
+<a class="logo-link" href="/">
+<img alt="VeloFlame Logo" decoding="async" height="40" src="/assets/img/veloflame-logo-96.webp" width="40"/>
+<span class="logo-text">VeloFlame</span>
+</a>
+</div>
+<div class="nav-menu" id="nav-menu">
+<ul class="nav-links">
+<li><a href="/#features">Features</a></li>
+<li><a href="/#how-it-works">How It Works</a></li>
+<li><a href="/#pricing">Pricing</a></li>
+<li><a href="/#about">About</a></li>
+</ul>
+<div class="social-icons">
+<a href="https://discord.com/invite/gF36AT3" rel="noopener" target="_blank" title="Discord">
+<img alt="Discord Icon" decoding="async" height="24" loading="lazy" src="/discord.svg" style="filter: invert(1);" width="24"/>
+</a>
+<a href="https://x.com/VeloFlameMC" rel="noopener" target="_blank" title="Twitter">
+<img alt="Twitter Icon" decoding="async" height="24" loading="lazy" src="/twitter.svg" style="filter: invert(1);" width="24"/>
+</a>
+</div>
+</div>
+<button aria-label="Open Menu" class="hamburger" id="hamburger-button">
+<span class="hamburger-bar"></span>
+<span class="hamburger-bar"></span>
+<span class="hamburger-bar"></span>
+</button>
+</nav>
 </header>
-<main id="main" class="config-page container">
-    <span class="kicker">Default configuration</span>
-    <h1>VeloFlame TOML configuration.</h1>
-    <p>This page mirrors the bundled <code>veloflame.toml</code> so server owners can review proxy firewall, rate limit, VPN, reconnect, whitelist, and logging defaults before installation.</p>
-    <div class="config-links"><a class="button primary" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" rel="noopener">Download VeloFlame</a><a class="button secondary" href="/veloflame.toml">Open raw TOML</a></div>
-    <section class="config-shell" aria-label="VeloFlame default TOML">
-        <div class="config-toolbar"><strong>veloflame.toml</strong><span>Static preview. Copy from your installed plugin before editing production.</span></div>
-        <pre class="config-code"><code># --------------------------------------------------- #
-# VeloFlame Proxy Configuration                       #
-# Download PRO at https://veloflame.com/              #
-# --------------------------------------------------- #
-
-# Config version. Do not change this.
-config-version = &quot;0.0.3&quot;
-
-[settings]
-# You can also use nicknames instead of IPs.
-whitelist = [
-    &quot;127.0.0.1&quot;,
-    &quot;0:0:0:0:0:0:0:1&quot;,
-    &quot;localhost&quot;,
-    &quot;172.17.0.1&quot;,
-    &quot;172.18.0.1&quot;,
-    &quot;172.19.0.1&quot;,
-    &quot;192.168.1.1&quot;,
-    &quot;192.168.0.1&quot;,
-    &quot;10.0.0.1&quot;,
-    &quot;LinsaFTW&quot;
-]
-
-[auto-whitelist]
-enabled = true
-# Time in minutes required to be permanently whitelisted
-playtime = 30
-
-# Configuration for action bar messages sent by VeloFlame.
-[action-bar]
-# Set to true to enable sending action bar messages to players.
-enabled = false
-# &quot;veloflame.actionbar&quot; permission.
-permission = false
-
-# Allows checks to block connections from the server.
-# This improves performance and security during attacks.
-[firewall]
-enabled = true
-duration = 60
-ipset = true
-ipset-name = &quot;veloflame-firewall&quot;
-# If set to true, check will always be active, ignoring trigger-activations.
-always-active = true
-# Format: &quot;hits:seconds&quot;
-# Logic: If hits reached in seconds, activate. Excess hits carry over to next period (capped at hits).
-trigger-activations = [
-    &quot;30:60&quot;,
-    &quot;20:30&quot;,
-    &quot;10:15&quot;,
-    &quot;6:10&quot;,
-    &quot;3:5&quot;,
-    &quot;2:1&quot;
-]
-logs = true
-logs-trigger = false
-whitelist = []
-
-# Prevents connecting too fast to the server.
-[ratelimit]
-enabled = true
-firewall = true
-connections = 3
-connections-period = 5
-pings = 10
-pings-period = 10
-logs = true
-logs-trigger = false
-whitelist = []
-
-# VeloFlame PRO only (https://veloflame.com/)
-# Extremely fast check to block connections from known VPNs.
-# Use along other anti-vpn plugins.
-[vpn]
-enabled = true
-firewall = true
-# If set to true, check will always be active, ignoring trigger-activations.
-always-active = true
-# Format: &quot;hits:seconds&quot;
-# Logic: If hits reached in seconds, activate. Excess hits carry over to next period (capped at hits).
-trigger-activations = [
-    &quot;30:60&quot;,
-    &quot;20:30&quot;,
-    &quot;10:15&quot;,
-    &quot;6:10&quot;,
-    &quot;3:5&quot;,
-    &quot;2:1&quot;
-]
-logs = true
-logs-trigger = false
-whitelist = []
-vpn_lists = [
-    # --- TheSpeedX ---
-    &quot;https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt&quot;,
-    &quot;https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt&quot;,
-
-    # --- X4BNet (VPN &amp; Datacenters) ---
-    &quot;https://raw.githubusercontent.com/X4BNet/lists_vpn/main/output/vpn/ipv4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/X4BNet/lists_vpn/main/output/datacenter/ipv4.txt&quot;,
-
-    # --- Firehol &amp; Security Lists ---
-    &quot;https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level1.netset&quot;,
-    &quot;https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/tor_exits.ipset&quot;,
-    &quot;https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/stopforumspam_7d.ipset&quot;,
-    &quot;https://cinsscore.com/list/ci-badguys.txt&quot;,
-    &quot;https://lists.blocklist.de/lists/all.txt&quot;,
-    &quot;https://blocklist.greensnow.co/greensnow.txt&quot;,
-    &quot;https://check.torproject.org/torbulkexitlist?ip=1.1.1.1&quot;,
-    &quot;https://tcpshield.com/blocklist.txt&quot;,
-
-    # --- Monosans (kept only non-failing) ---
-    &quot;https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt&quot;,
-    &quot;https://raw.githubusercontent.com/monosans/proxy-list/main/proxies.json&quot;,
-
-    # --- Coocoobau (Provider Specific) ---
-    &quot;https://raw.githubusercontent.com/Coocoobau/vpn-ip-lists/main/nordvpn-ips.txt&quot;,
-    &quot;https://raw.githubusercontent.com/Coocoobau/vpn-ip-lists/main/protonvpn-ips.txt&quot;,
-    &quot;https://raw.githubusercontent.com/Coocoobau/vpn-ip-lists/main/windscribevpn-ips.txt&quot;,
-
-    # --- ScriptzTeam (ProtonVPN) ---
-    &quot;https://raw.githubusercontent.com/scriptzteam/ProtonVPN-VPN-IPs/main/exit_ips.txt&quot;,
-    &quot;https://raw.githubusercontent.com/scriptzteam/ProtonVPN-VPN-IPs/main/entry_ips.txt&quot;,
-
-    # --- OfficialPutuID (KangProxy) ---
-    &quot;https://raw.githubusercontent.com/officialputuid/KangProxy/main/http/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/officialputuid/KangProxy/main/https/https.txt&quot;,
-    &quot;https://raw.githubusercontent.com/officialputuid/KangProxy/main/socks4/socks4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/officialputuid/KangProxy/main/socks5/socks5.txt&quot;,
-
-    # --- Proxifly ---
-    &quot;https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/all/data.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/https/data.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt&quot;,
-
-    # --- Multi-Source Aggregators (clean) ---
-    &quot;https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt&quot;,
-    &quot;https://raw.githubusercontent.com/mmpx12/proxy-list/master/ips-list.txt&quot;,
-    &quot;https://raw.githubusercontent.com/mmpx12/proxy-list/master/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt&quot;,
-    &quot;https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/proxy.txt&quot;,
-    &quot;https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/allive.txt&quot;,
-    &quot;https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/http_proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/socks4_proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/dpangestuw/Free-Proxy/main/socks5_proxies.txt&quot;,
-    &quot;https://vakhov.github.io/fresh-proxy-list/http.txt&quot;,
-    &quot;https://vakhov.github.io/fresh-proxy-list/https.txt&quot;,
-    &quot;https://vakhov.github.io/fresh-proxy-list/socks4.txt&quot;,
-    &quot;https://vakhov.github.io/fresh-proxy-list/socks5.txt&quot;,
-
-    # --- Smaller Lists (verified non-failing) ---
-    &quot;https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt&quot;,
-    &quot;https://raw.githubusercontent.com/almroot/proxylist/master/list.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxy4parsing/proxy-list/main/aproxy.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxy4parsing/proxy-list/main/hproxy.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxy4parsing/proxy-list/main/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/proxy4parsing/proxy-list/main/http_old.txt&quot;,
-    &quot;https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks5.txt&quot;,
-    &quot;https://raw.githubusercontent.com/Anonym0usWork1221/Free-Proxies/main/proxy_files/http_proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/Anonym0usWork1221/Free-Proxies/main/proxy_files/https_proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/Anonym0usWork1221/Free-Proxies/main/proxy_files/socks4_proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/Anonym0usWork1221/Free-Proxies/main/proxy_files/socks5_proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/elliottophellia/yakumo/master/results/http/global/http_checked.txt&quot;,
-    &quot;https://raw.githubusercontent.com/elliottophellia/yakumo/master/results/socks4/global/socks4_checked.txt&quot;,
-    &quot;https://raw.githubusercontent.com/elliottophellia/yakumo/master/results/socks5/global/socks5_checked.txt&quot;,
-
-    # --- Public APIs &amp; Stable Endpoints ---
-    &quot;https://api.proxyscrape.com/v2/?request=getproxies&amp;protocol=http&amp;timeout=10000&amp;country=all&amp;ssl=all&amp;anonymity=all&quot;,
-    &quot;https://api.proxyscrape.com/v2/?request=getproxies&amp;protocol=socks4&amp;timeout=10000&amp;country=all&quot;,
-    &quot;https://api.proxyscrape.com/v2/?request=getproxies&amp;protocol=socks5&amp;timeout=10000&amp;country=all&quot;,
-    &quot;https://openproxylist.xyz/http.txt&quot;,
-    &quot;https://openproxylist.xyz/socks4.txt&quot;,
-    &quot;https://openproxylist.xyz/socks5.txt&quot;,
-    &quot;https://proxyspace.pro/http.txt&quot;,
-    &quot;https://proxyspace.pro/https.txt&quot;,
-    &quot;https://proxyspace.pro/socks4.txt&quot;,
-    &quot;https://proxyspace.pro/socks5.txt&quot;,
-    &quot;https://multiproxy.org/txt_all/proxy.txt&quot;,
-    &quot;https://rootjazz.com/proxies/proxies.txt&quot;,
-    &quot;http://az0-vpnip-public.oooninja.com/ip.txt&quot;,
-
-    # --- Additional GitHub Raw Proxy Lists (new) ---
-    &quot;https://raw.githubusercontent.com/theriturajps/proxy-list/main/proxies.txt&quot;,
-
-    &quot;https://raw.githubusercontent.com/thenasty1337/free-proxy-list/main/data/latest/proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/thenasty1337/free-proxy-list/main/data/latest/types/http/proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/thenasty1337/free-proxy-list/main/data/latest/types/socks4/proxies.txt&quot;,
-    &quot;https://raw.githubusercontent.com/thenasty1337/free-proxy-list/main/data/latest/types/socks5/proxies.txt&quot;,
-
-    &quot;https://raw.githubusercontent.com/0x1881/Free-Proxy-List/main/http.txt&quot;,
-    &quot;https://raw.githubusercontent.com/0x1881/Free-Proxy-List/main/https.txt&quot;,
-    &quot;https://raw.githubusercontent.com/0x1881/Free-Proxy-List/main/socks4.txt&quot;,
-    &quot;https://raw.githubusercontent.com/0x1881/Free-Proxy-List/main/socks5.txt&quot;,
-]
-
-# VeloFlame PRO only (https://veloflame.com/)
-# Slower but more accurate VPN check using online APIs.
-[vpn-online]
-enabled = true
-firewall = true
-logs = true
-logs-trigger = false
-apis = [
-    &quot;https://proxycheck.io/v2/{ip}?vpn=1&amp;asn=1&quot;,
-    &quot;https://funkemunky.cc/vpn?ip={ip}&quot;,
-    &quot;https://api.ipapi.is/?q={ip}&quot;,
-]
-# If set to true, check will always be active, ignoring trigger-activations.
-always-active = true
-# Format: &quot;hits:seconds&quot;
-# Logic: If hits reached in seconds, activate. Excess hits carry over to next period (capped at hits).
-trigger-activations = [
-    &quot;30:60&quot;,
-    &quot;20:30&quot;,
-    &quot;10:15&quot;,
-    &quot;6:10&quot;,
-    &quot;3:5&quot;,
-    &quot;2:1&quot;
-]
-# Performance
-thread-pool-size = 4
-check-timeout-ms = 1000
-max-concurrent-checks = 200
-write-interval-minutes = 1
-whitelist = []
-
-# VeloFlame PRO only (https://veloflame.com/)
-# Prevents using many accounts inside the server.
-[account]
-enabled = true
-# Maximum total amount of accounts allowed per IP.
-limit = 5
-# Maximum online accounts allowed per IP.
-concurrent = 3
-firewall = true
-whitelist = []
-
-# VeloFlame PRO only (https://veloflame.com/)
-# Asks new players to reconnect to join.
-[reconnect]
-enabled = true
-firewall = true
-# If set to true, check will always be active, ignoring trigger-activations.
-always-active = false
-# Format: &quot;hits:seconds&quot;
-# Logic: If hits reached in seconds, activate. Excess hits carry over to next period (capped at hits).
-trigger-activations = [
-    &quot;30:60&quot;,
-    &quot;20:30&quot;,
-    &quot;10:15&quot;,
-    &quot;6:10&quot;,
-    &quot;3:5&quot;,
-    &quot;2:1&quot;
-]
-# After this time, player has to reconnect again if failed.
-timeout = 10
-# If you connect too fast, you will be firewalled.
-min-time = 500
-# Number of attempts to be able to connect the server.
-pings = 1
-connections = 1
-logs = true
-logs-trigger = false
-whitelist = []
-
-# VeloFlame PRO only (https://veloflame.com/)
-# Analyzes nickname patterns to block bot attacks using similar names.
-[nickname]
-enabled = true
-firewall = true
-# If set to true, check will always be active, ignoring trigger-activations.
-always-active = false
-# Format: &quot;hits:seconds&quot;
-# Logic: If hits reached in seconds, activate. Excess hits carry over to next period (capped at hits).
-trigger-activations = [
-    &quot;30:60&quot;,
-    &quot;20:30&quot;,
-    &quot;10:15&quot;,
-    &quot;6:10&quot;,
-    &quot;3:5&quot;,
-    &quot;2:1&quot;
-]
-# How many recent nicknames to compare against (Default: 10).
-memory-size = 10
-# Block if too many players have the same prefix. (eg zz_test, zz_bot, bot_test)
-same-prefix-block = true
-# How many same prefixes to trigger a block (Default: 3).
-same-prefix-threshold = 3
-# If true, players with similar nicknames will be blocked.
-similarity-block = true
-# It will only block after 3 nicknames have been flagged.
-similarity-match-threshold = 3
-# The percentage of similarity required to flag a name (0.70 = 70%).
-similarity-threshold = 0.70
-# If true, counts similarity only for names with the same length.
-similarity-same-length = true
-# Block when too many nicknames have the same length eg blah, bloh, bleh
-same-length-block = true
-# If there is more than 5 nicknames with the exact same length in memory, block
-same-length-threshold = 5
-logs = true
-logs-trigger = false
-whitelist = []
-</code></pre>
-    </section>
+<main>
+<section id="config-display">
+<div class="container">
+<h1 class="section-title">Default Configuration</h1>
+<div class="config-container">
+<pre><code class="language-toml" id="toml-content">Loading configuration...</code></pre>
+</div>
+</div>
+</section>
 </main>
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <div>
-            <a class="brand footer-brand" href="/">
-                <img src="/assets/img/veloflame-logo-96.webp" width="32" height="32" alt="" loading="lazy" decoding="async">
-                <span>VeloFlame</span>
-            </a>
-            <p>Secure Minecraft proxy software for Velocity networks by ArkFlame.</p>
-        </div>
-        <nav aria-label="Footer navigation">
-            <a href="/articles/">Articles for Minecraft server owners</a>
-            <a href="/config/">Default configuration</a>
-            <a href="/llms.txt">llms.txt</a>
-            <a href="/sitemap.xml">Sitemap</a>
-        </nav>
-        <div class="footer-cta">
-            <a class="button primary" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" rel="noopener">Download VeloFlame</a>
-        </div>
-    </div>
+<footer>
+<div class="container">
+<p>© 2025 VeloFlame. All Rights Reserved.</p>
+<nav aria-label="Footer navigation" class="footer-links"><a href="/articles/">Articles</a><a href="/config/">Config</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a></nav></div>
 </footer>
-<script src="/assets/js/site.js" defer></script>
+<!-- Prism.js Scripts -->
+
+
+<!-- Main Page Scripts -->
+<script>
+        const hamburger = document.getElementById('hamburger-button');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = navMenu.querySelectorAll('a');
+
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+            });
+        });
+
+        // Fetch and display veloflame.toml
+        document.addEventListener('DOMContentLoaded', () => {
+            const codeBlock = document.getElementById('toml-content');
+            fetch('/veloflame.toml')
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+                  return response.text();
+              })
+              .then(data => {
+                  codeBlock.textContent = data;
+                  if (window.Prism) { Prism.highlightElement(codeBlock); }
+              })
+              .catch(error => {
+                  codeBlock.textContent = 'Error: Could not load veloflame.toml.\nPlease ensure the file exists in the root directory.';
+                  console.error('Fetch error:', error);
+              });
+        });
+    </script>
 </body>
 </html>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VeloFlame - The Most Secure Proxy for Minecraft</title>
-    <meta name="description" content="VeloFlame is a secure Minecraft Velocity proxy fork with firewall, account checks, VPN and proxy detection, rate limiting, reconnect protection, and practical tools for public server networks.">
+    <title>VeloFlame - Secure Minecraft Proxy</title>
+    <meta name="description" content="VeloFlame is a secure Velocity fork for Minecraft servers, integrating FlameCord-style proxy security, firewall checks, account checks, VPN and proxy detection, rate limiting, reconnect protection, and high-performance bot attack filtering.">
     <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="keywords" content="Minecraft proxy, Velocity fork, VeloFlame, BungeeCord, FlameCord, Minecraft server security, bot protection, anti-bot, Velocity proxy, PaperMC, Spigot">
     <link rel="canonical" href="https://veloflame.com/">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/webp" href="/assets/img/veloflame-logo-96.webp">
@@ -14,193 +15,265 @@
     <meta name="theme-color" content="#0a0a0c">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://veloflame.com/">
-    <meta property="og:title" content="VeloFlame - The Most Secure Proxy for Minecraft">
-    <meta property="og:description" content="Secure Minecraft Velocity proxy fork with firewall, rate limiting, account checks, VPN/proxy detection, reconnect protection, and strong backend protection.">
+    <meta property="og:title" content="VeloFlame - Secure Minecraft Proxy">
+    <meta property="og:description" content="The most secure Velocity fork for Minecraft, offering high performance and protection against bot attacks.">
     <meta property="og:image" content="https://veloflame.com/assets/img/veloflame-og.webp">
     <meta property="og:site_name" content="VeloFlame">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VeloFlame - The Most Secure Proxy for Minecraft">
-    <meta name="twitter:description" content="Secure Minecraft Velocity proxy fork with firewall, account checks, VPN/proxy detection, reconnect protection, and practical tools for public server networks.">
+    <meta name="twitter:title" content="VeloFlame - Secure Minecraft Proxy Fork of Velocity">
+    <meta name="twitter:description" content="Secure Velocity fork for Minecraft servers with proxy firewall, connection checks, VPN/proxy detection, and anti-bot protection.">
     <meta name="twitter:image" content="https://veloflame.com/assets/img/veloflame-og.webp">
-    <link rel="stylesheet" href="/assets/css/base.css">
-    <link rel="stylesheet" href="/assets/css/home.css">
+    <link href="/style.css" rel="stylesheet">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"VeloFlame","url":"https://veloflame.com/","logo":"https://veloflame.com/assets/img/veloflame-logo-192.webp","sameAs":["https://x.com/VeloFlameMC","https://discord.com/invite/gF36AT3","https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/","https://polymart.org/product/9157/veloflame-pro-secure-proxy"]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VeloFlame","applicationCategory":"ServerApplication","operatingSystem":"Java","description":"Secure Minecraft Velocity proxy fork with firewall, account checks, VPN/proxy detection, rate limits, and reconnect anti-bot protection.","url":"https://veloflame.com/","offers":[{"@type":"Offer","name":"VeloFlame Free","url":"https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"VeloFlame PRO","url":"https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/","price":"13.99","priceCurrency":"USD"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"VeloFlame","url":"https://veloflame.com/","inLanguage":"en"}</script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-    <nav class="container nav" aria-label="Primary navigation">
-        <a class="brand" href="/" aria-label="VeloFlame home">
-            <img src="/assets/img/veloflame-logo-96.webp" width="40" height="40" alt="VeloFlame flame logo" decoding="async">
-            <span>VeloFlame</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="nav-menu" id="primary-menu">
-            <a href="/#features">Features</a>
-            <a href="/#how-it-works">How It Works</a>
-            <a href="/#pricing">Pricing</a>
-            <a href="/#about">About</a>
-            <a href="/config/">Config</a>
-            <a class="icon-link" href="https://discord.com/invite/gF36AT3" target="_blank" rel="noopener" aria-label="Join the VeloFlame Discord">
-                <img src="/discord.svg" width="20" height="20" alt="" decoding="async">
-            </a>
-            <a class="icon-link" href="https://x.com/VeloFlameMC" target="_blank" rel="noopener" aria-label="VeloFlame on X">
-                <img src="/twitter.svg" width="20" height="20" alt="" decoding="async">
-            </a>
-        </div>
-    </nav>
+<!-- Hidden SVG block for the line gradients -->
+<svg height="0" style="position:absolute" width="0">
+<defs>
+<linearGradient id="red-gradient">
+<stop offset="0%" stop-color="#FF416C"></stop>
+<stop offset="100%" stop-color="#FF4B2B"></stop>
+</linearGradient>
+<linearGradient id="green-gradient">
+<stop offset="0%" stop-color="#27c93f"></stop>
+<stop offset="100%" stop-color="#1db954"></stop>
+</linearGradient>
+</defs>
+</svg>
+<header>
+<nav class="container">
+<div class="logo">
+<img alt="VeloFlame Logo" decoding="async" height="40" src="/assets/img/veloflame-logo-96.webp" width="40"/>
+<span class="logo-text">VeloFlame</span>
+</div>
+<div class="nav-menu" id="nav-menu">
+<ul class="nav-links">
+<li><a href="#features">Features</a></li>
+<li><a href="#how-it-works">How It Works</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="/config/">Config</a></li>
+</ul>
+<div class="social-icons">
+<a href="https://discord.com/invite/gF36AT3" rel="noopener" target="_blank" title="Discord">
+<img alt="Discord Icon" decoding="async" height="24" loading="lazy" src="/discord.svg" style="filter: invert(1);" width="24"/>
+</a>
+<a href="https://x.com/VeloFlameMC" rel="noopener" target="_blank" title="Twitter">
+<img alt="Twitter Icon" decoding="async" height="24" loading="lazy" src="/twitter.svg" style="filter: invert(1);" width="24"/>
+</a>
+</div>
+</div>
+<button aria-label="Open Menu" class="hamburger" id="hamburger-button">
+<span class="hamburger-bar"></span>
+<span class="hamburger-bar"></span>
+<span class="hamburger-bar"></span>
+</button>
+</nav>
 </header>
-<main id="main">
-    <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-copy">
-                <h1 class="hero-title">The Most <span class="secure-line">Secure</span> Proxy<br>for Minecraft.</h1>
-                <p>VeloFlame integrates FlameCord's legendary security into a modern Velocity fork, delivering the highest performance and protection against all bot attacks.</p>
-                <div class="hero-actions">
-                    <a class="button primary" href="https://discord.com/invite/gF36AT3" target="_blank" rel="noopener">Join Discord</a>
-                    <a class="button secondary" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" rel="noopener">Download Now</a>
-                    <a class="button icon polymart-icon" href="https://polymart.org/product/9157/veloflame-pro-secure-proxy" target="_blank" rel="noopener" aria-label="View VeloFlame on Polymart"><img src="/assets/img/polymart-64.webp" width="24" height="24" alt="" decoding="async"></a>
-                </div>
-            </div>
-            <div class="terminal" aria-label="VeloFlame console preview">
-                <div class="terminal-head"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                <div class="terminal-body">
-                    <p><span class="info">[VeloFlame]</span> Initializing firewall...</p>
-                    <p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 103.5.7.2 (RateLimit)</p>
-                    <p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 45.12.3.5 (VPN Detection)</p>
-                    <p><span class="info">[VeloFlame]</span> Connection from LinsaFTW allowed.</p>
-                    <p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 192.168.1.10 (Invalid Account)</p>
-                    <p><span class="info">[VeloFlame]</span> System stable. 3 attacks blocked.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="section container showcase center">
-        <h2 class="section-title">The Ultimate Protection</h2>
-        <div class="grid-3 feature-grid">
-            <article class="feature-card card">
-                <div class="feature-icon"><img src="/firewall.svg" width="28" height="28" alt="" loading="lazy" decoding="async"></div>
-                <h3>Advanced Firewall</h3>
-                <p>Our integrated firewall blocks malicious connections and common bot attacks before they reach your server.</p>
-            </article>
-            <article class="feature-card card">
-                <div class="feature-icon"><img src="/lock.svg" width="28" height="28" alt="" loading="lazy" decoding="async"></div>
-                <h3>Connection Checks</h3>
-                <p>Verify every connection with VPN, Account, and Rate-Limiting checks to filter out illegitimate traffic.</p>
-            </article>
-            <article class="feature-card card">
-                <div class="feature-icon"><img src="/performance.svg" width="28" height="28" alt="" loading="lazy" decoding="async"></div>
-                <h3>Native Performance</h3>
-                <p>By integrating security directly into the proxy, VeloFlame offers extreme performance compared to plugin-based solutions.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section container chart-section" aria-labelledby="cpu-title">
-        <h2 id="cpu-title" class="section-title uppercase">CPU EFFICIENCY</h2>
-        <div class="chart-card card">
-            <div class="chart-header">
-                <div class="legend-item"><span class="legend-line velocity"></span><span>Velocity-CTD</span><strong>3.71%</strong></div>
-                <div class="legend-item"><span class="legend-line veloflame"></span><span>VeloFlame</span><strong>2.14%</strong></div>
-            </div>
-            <div class="chart-panel" aria-label="CPU efficiency comparison">
-                <div class="chart-axis chart-axis-y">
-                    <span>5.0%</span>
-                    <span>4.0%</span>
-                    <span>3.0%</span>
-                    <span>2.0%</span>
-                    <span>1.0%</span>
-                </div>
-                <svg viewBox="0 0 620 280" role="img" aria-label="Line graph comparing Velocity-CTD and VeloFlame CPU efficiency">
-                    <path class="chart-line velocity" d="M18 165 C60 90, 115 220, 180 110 S315 70, 370 120 S475 210, 550 110 S605 140, 612 128"></path>
-                    <path class="chart-line veloflame" d="M18 210 C75 215, 120 150, 185 182 S310 235, 392 182 S510 152, 612 174"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works" class="section container center filter-section">
-        <h2 class="section-title">Visualizing The Filter</h2>
-        <div class="filter-diagram" aria-label="Diagram showing VeloFlame filtering malicious traffic before it reaches a Spigot server">
-            <div class="traffic-col">
-                <div class="traffic-box card traffic-bad"><h3>Malicious Bots</h3><p>High-volume packets</p></div>
-                <div class="traffic-box card traffic-good"><h3>Legitimate Players</h3><p>Normal packets</p></div>
-            </div>
-            <div class="traffic-middle">
-                <span class="flow-line top"></span>
-                <span class="flow-line bottom"></span>
-                <div class="diagram-box card proxy-box">
-                    <h3>VeloFlame<br>Proxy</h3>
-                    <p>Filters malicious bots</p>
-                </div>
-                <span class="traffic-path shield-path"></span>
-                <div class="shield-node"><img src="/assets/img/shield-96.webp" width="34" height="34" alt="VeloFlame shield" loading="lazy" decoding="async"></div>
-                <span class="traffic-path clean-path"></span>
-            </div>
-            <div class="server-col">
-                <div class="diagram-box card server-box">
-                    <h3>Spigot Server</h3>
-                    <p>Receives clean traffic</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="section container pricing-section center">
-        <h2 class="section-title">Choose Your Plan</h2>
-        <div class="pricing-grid">
-            <article class="pricing-card card">
-                <h3>VeloFlame</h3>
-                <div class="price">FREE</div>
-                <p>Essential protection to get you started. Available on BuiltByBit.</p>
-                <ul class="check-list">
-                    <li>Advanced Firewall</li>
-                    <li>Connection Rate Limit</li>
-                </ul>
-                <div class="pricing-actions">
-                    <a class="button secondary" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" rel="noopener">Get Started</a>
-                    <a class="button icon polymart-icon" href="https://polymart.org/product/9156/veloflame-lite-secure-proxy" target="_blank" rel="noopener" aria-label="View VeloFlame Lite on Polymart"><img src="/assets/img/polymart-64.webp" width="24" height="24" alt="" loading="lazy" decoding="async"></a>
-                </div>
-            </article>
-            <article class="pricing-card card featured">
-                <h3>VeloFlame PRO</h3>
-                <div class="price">$13.99</div>
-                <p>The ultimate security suite for established and professional servers.</p>
-                <ul class="check-list">
-                    <li>Everything in Free, plus:</li>
-                    <li>Advanced Account Checks</li>
-                    <li>VPN &amp; Proxy Detection</li>
-                    <li>Reconnect Anti-Bot Checks</li>
-                </ul>
-                <div class="pricing-actions">
-                    <a class="button primary" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" target="_blank" rel="noopener">Purchase PRO</a>
-                    <a class="button icon polymart-icon" href="https://polymart.org/product/9157/veloflame-pro-secure-proxy" target="_blank" rel="noopener" aria-label="View VeloFlame PRO on Polymart"><img src="/assets/img/polymart-64.webp" width="24" height="24" alt="" loading="lazy" decoding="async"></a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section id="about" class="section about-section">
-        <div class="container about-wrap center">
-            <h2 class="section-title">Built for Performance &amp;<br>Security</h2>
-            <p>VeloFlame is a project by LinsaFTW, CEO of Arkflame Development. As a fork of the Velocity-CTD project, it brings the powerful security features of <strong>FlameCord</strong> to the modern Velocity proxy. For complete protection, pair VeloFlame with <strong>ExploitFixer</strong> to secure your Spigot servers from game-breaking exploits.</p>
-            <div class="footer-links" aria-label="Secondary navigation">
-                <a href="/articles/">Articles for Minecraft server owners</a>
-                <a href="/config/">Config</a>
-                <a href="/llms.txt">llms.txt</a>
-                <a href="/sitemap.xml">Sitemap</a>
-            </div>
-        </div>
-    </section>
+<main>
+<section id="hero">
+<div class="container hero-container">
+<div class="hero-content">
+<h1>The Most <span class="gradient-text">Secure</span> Proxy for Minecraft.</h1>
+<p>VeloFlame integrates FlameCord's legendary security into a modern Velocity fork, delivering the highest performance and protection against all bot attacks.</p>
+<div class="hero-buttons">
+<a class="cta-button" href="https://discord.com/invite/gF36AT3" rel="noopener" target="_blank">Join Discord</a>
+<!-- UPDATED HERO DOWNLOAD BUTTONS -->
+<div class="button-group">
+<a class="cta-button secondary" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" rel="noopener" target="_blank">Download Now</a>
+<a class="polymart-button" href="https://polymart.org/product/9157/veloflame-pro-secure-proxy" rel="noopener" target="_blank" title="Download on Polymart">
+<img alt="Polymart" decoding="async" height="24" loading="lazy" src="/assets/img/polymart-64.webp" width="24"/>
+</a>
+</div>
+</div>
+</div>
+<div class="terminal">
+<div class="terminal-header"><div class="terminal-dot dot-red"></div><div class="terminal-dot dot-yellow"></div><div class="terminal-dot dot-green"></div></div>
+<div class="terminal-body">
+<p><span class="info">[VeloFlame]</span> Initializing firewall...</p><p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 103.5.7.2 (RateLimit)</p><p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 45.12.3.5 (VPN Detected)</p><p><span class="info">[VeloFlame]</span> Connection from LinsaFTW allowed.</p><p><span class="blocked">[VeloFlame]</span> BLOCKED: Bot attack from 192.168.1.10 (Invalid Account)</p><p><span class="info">[VeloFlame]</span> System stable. 3 attacks blocked.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="container" id="features">
+<h2 class="section-title">The Ultimate Protection</h2>
+<div class="features-grid">
+<div class="feature-card">
+<div class="icon">
+<img alt="Firewall Icon" decoding="async" height="28" loading="lazy" src="/firewall.svg" style="--icon-url: url('/firewall.svg');" width="28"/>
+</div>
+<h3>Advanced Firewall</h3>
+<p>Our integrated firewall blocks malicious connections and common bot attacks before they reach your server.</p>
+</div>
+<div class="feature-card">
+<div class="icon">
+<img alt="Lock Icon" decoding="async" height="28" loading="lazy" src="/lock.svg" style="--icon-url: url('/lock.svg');" width="28"/>
+</div>
+<h3>Connection Checks</h3>
+<p>Verify every connection with VPN, Account, and Rate-Limiting checks to filter out illegitimate traffic.</p>
+</div>
+<div class="feature-card">
+<div class="icon">
+<img alt="Performance Icon" decoding="async" height="28" loading="lazy" src="/performance.svg" style="--icon-url: url('/performance.svg');" width="28"/>
+</div>
+<h3>Native Performance</h3>
+<p>By integrating security directly into the proxy, VeloFlame offers extreme performance compared to plugin-based solutions.</p>
+</div>
+</div>
+</section>
+<!-- CPU EFFICIENCY GRAPH SECTION -->
+<section class="container" id="cpu-efficiency">
+<h2 class="section-title">CPU EFFICIENCY</h2>
+<div class="graph-container">
+<div class="graph-legend">
+<div class="legend-item velocity-ctd">
+<span>Velocity-CTD</span>
+<p>3.71%</p>
+</div>
+<div class="legend-item veloflame">
+<span>VeloFlame</span>
+<p>2.14%</p>
+</div>
+</div>
+<div class="graph-visual">
+<div class="y-axis">
+<span>5.0%</span>
+<span>4.0%</span>
+<span>3.0%</span>
+<span>2.0%</span>
+<span>1.0%</span>
+</div>
+<div class="plot-area">
+<div class="plot-line velocity-ctd-line">
+<svg preserveAspectRatio="none" viewBox="0 0 100 25">
+<path d="M 0 15 C 5 5, 10 20, 15 10 S 25 0, 30 5 s 10 12, 15 5 s 10 -8, 15 -3 s 10 8, 15 4 s 10 -10, 15 -6 s 10 8, 10 5" fill="none" stroke-width="0.5"></path>
+</svg>
+</div>
+<div class="plot-line veloflame-line">
+<svg preserveAspectRatio="none" viewBox="0 0 100 25">
+<path d="M 0 20 C 10 20, 15 12, 25 15 S 45 22, 55 18 S 70 12, 80 15 s 15 2, 20 2" fill="none" stroke-width="0.5"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container" id="how-it-works">
+<h2 class="section-title">Visualizing The Filter</h2>
+<div class="diagram-container">
+<div class="diagram-sources">
+<div class="diagram-box"><h4>Malicious Bots</h4><p>High-volume packets</p></div>
+<div class="diagram-box"><h4>Legitimate Players</h4><p>Normal packets</p></div>
+</div>
+<div class="diagram-flow">
+<svg preserveAspectRatio="none" viewBox="0 0 100 100">
+<path class="path-track" d="M0 25 L100 50" stroke-width="0.5"></path>
+<path class="flow-packet packet-red animate-fast" d="M0 25 L100 50" fill="none" stroke-width="1.5"></path>
+<path class="path-track" d="M0 75 L100 50" stroke-width="0.5"></path>
+<path class="flow-packet packet-green animate-slow" d="M0 75 L100 50" fill="none" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="arrow-down"></div>
+<div class="diagram-box"><h4>VeloFlame Proxy</h4><p>Filters malicious bots</p></div>
+<div class="diagram-flow">
+<div class="filter-display">
+<div class="filter-line"></div>
+<div class="filter-shield-icon">
+<img alt="Protection Shield Icon" decoding="async" height="32" loading="lazy" src="/assets/img/shield-96.webp" style="--icon-url: url('shield.svg');" width="32"/>
+</div>
+</div>
+</div>
+<div class="arrow-down"></div>
+<div class="diagram-box"><h4>Spigot Server</h4><p>Receives clean traffic</p></div>
+</div>
+</section>
+<section class="container" id="pricing">
+<h2 class="section-title">Choose Your Plan</h2>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h3>VeloFlame</h3>
+<div class="price">FREE</div>
+<p class="plan-description">Essential protection to get you started. Available on BuiltByBit.</p>
+<ul class="features-list">
+<li>
+<svg class="checkmark-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+<span>Advanced Firewall</span>
+</li>
+<li>
+<svg class="checkmark-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+<span>Connection Rate Limit</span>
+</li>
+</ul>
+<!-- UPDATED PRICING FREE BUTTONS -->
+<div class="button-group">
+<a class="pricing-button" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" rel="noopener" target="_blank">Get Started</a>
+<a class="polymart-button" href="https://polymart.org/product/9156/veloflame-lite-secure-proxy" rel="noopener" target="_blank" title="Get on Polymart">
+<img alt="Polymart" decoding="async" height="24" loading="lazy" src="/assets/img/polymart-64.webp" width="24"/>
+</a>
+</div>
+</div>
+<div class="pricing-card featured">
+<h3>VeloFlame PRO</h3>
+<div class="price">$13.99</div>
+<p class="plan-description">The ultimate security suite for established and professional servers.</p>
+<ul class="features-list">
+<li>
+<svg class="checkmark-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+<span>Everything in Free, plus:</span>
+</li>
+<li>
+<svg class="checkmark-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+<span>Advanced Account Checks</span>
+</li>
+<li>
+<svg class="checkmark-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+<span>VPN &amp; Proxy Detection</span>
+</li>
+<li>
+<svg class="checkmark-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+<span>Reconnect Anti-Bot Checks</span>
+</li>
+</ul>
+<!-- UPDATED PRICING PRO BUTTONS -->
+<div class="button-group">
+<a class="pricing-button" href="https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/" rel="noopener" target="_blank">Purchase PRO</a>
+<a class="polymart-button" href="https://polymart.org/product/9157/veloflame-pro-secure-proxy" rel="noopener" target="_blank" title="Purchase on Polymart">
+<img alt="Polymart" decoding="async" height="24" loading="lazy" src="/assets/img/polymart-64.webp" width="24"/>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="container about-content">
+<h2 class="section-title">Built for Performance &amp; Security</h2>
+<p>VeloFlame is a project by LinsaFTW, CEO of Arkflame Development. As a fork of the Velocity-CTD project, it brings the powerful security features of <a href="https://flamecord.com" rel="noopener" target="_blank">FlameCord</a> to the modern Velocity proxy. For complete protection, pair VeloFlame with <a href="https://exploitfixer.org" rel="noopener" target="_blank">ExploitFixer</a> to secure your Spigot servers from game-breaking exploits.</p>
+</div>
+</section>
 </main>
-<footer class="site-footer compact-footer">
-    <div class="container footer-center">© 2025 VeloFlame. All Rights Reserved.</div>
+<footer>
+<div class="container">
+<p>© 2025 VeloFlame. All Rights Reserved.</p>
+<nav aria-label="Footer navigation" class="footer-links"><a href="/articles/">Articles</a><a href="/config/">Config</a><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a></nav></div>
 </footer>
-<script src="/assets/js/site.js" defer></script>
+<script>
+        const hamburger = document.getElementById('hamburger-button');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = navMenu.querySelectorAll('a');
+
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
